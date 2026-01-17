@@ -4,3 +4,6 @@ db_connect.php
 # --- OSの不要ファイル ---
 .DS_Store
 Thumbs.db
+
+# .gitignore に追記
+travel.db
