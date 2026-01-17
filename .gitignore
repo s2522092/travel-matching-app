@@ -1,0 +1,6 @@
+# --- 重要：パスワード等の除外 ---
+db_connect.php
+
+# --- OSの不要ファイル ---
+.DS_Store
+Thumbs.db
