@@ -55,7 +55,7 @@
         <button type="submit">登録</button>
         </form>
         <div class="link">
-        すでにアカウントをお持ちの方は <a href="login.html">ログイン</a>
+        すでにアカウントをお持ちの方は <a href="login.php">ログイン</a>
         </div>
     </div>
 

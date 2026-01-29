@@ -55,9 +55,9 @@
     <div class="container">
         <h1>検索だけでは見つからない旅へ</h1>
         <p>今のあなたの気分から、ぴったりな旅の「コト」を提案します。</p>
-        <a href="login.html" class="button">ログインしてはじめる</a>
+        <a href="login.php" class="button">ログインしてはじめる</a>
         <div class="sub-link">
-            はじめての方は <a href="signup.html">新規登録</a>
+            はじめての方は <a href="signup.php">新規登録</a>
         </div>
     </div>
 </body>
