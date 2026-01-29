@@ -70,7 +70,7 @@
         };
         localStorage.setItem('demoUser', JSON.stringify(user));
         alert('登録しました。ログインしてください。');
-        window.location.href = 'login.html';
+        window.location.href = 'login.php';
         });
     </script>
 </body>

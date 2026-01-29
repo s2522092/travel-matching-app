@@ -55,7 +55,7 @@
         <button type="submit">ログイン</button>
         </form>
         <div class="link">
-        はじめての方は <a href="signup.html">新規登録</a>
+        はじめての方は <a href="signup.php">新規登録</a>
         </div>
     </div>
 
@@ -74,7 +74,7 @@
         const user = JSON.parse(saved);
         if (user.username === username && user.password === password) {
             localStorage.setItem('loggedInUser', username);
-            window.location.href = 'matching.html';
+            window.location.href = 'matching.php';
         } else {
             alert('ユーザー名またはパスワードが違います。');
         }
