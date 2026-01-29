@@ -1,0 +1,112 @@
+const plans = [
+  {
+    id: "student_not_go_home",
+    title: "学生向け：なんとなく宿に帰りたくない夕方プラン",
+    description: "観光や用事が一段落したけれど、まっすぐ宿に戻る気分じゃないときに。お金をあまり使わず、旅先の街で一人でぼーっとできる寄り道コースです。",
+    userTypes: ["高校生","大学生"],
+    moods: ["なんとなく帰りたくない","一人でいたいけど家は嫌","お金を使わずに気分転換したい"],
+    links: [
+      { label: "旅先の図書館・自習スペースを探す（Googleマップ）", url: "https://www.google.com/maps/search/図書館" },
+      { label: "長居しやすいカフェを探す（Googleマップ）", url: "https://www.google.com/maps/search/カフェ+静か" }
+    ]
+  },
+  {
+    id: "student_kill_time",
+    title: "学生向け：次の予定まで少し時間が空いたときのプラン",
+    description: "チェックインや集合時間まで30分〜1時間だけ空いたときに。スマホ以外で、旅先の空気をゆるく感じられる過ごし方です。",
+    userTypes: ["高校生","大学生"],
+    moods: ["次の予定まで少し時間が空いた","お金を使わずに気分転換したい"],
+    links: [
+      { label: "駅・バスターミナル周辺の公園・ベンチを探す", url: "https://www.google.com/maps/search/公園+ベンチ" },
+      { label: "無料・少額で入れる資料館・展示を探す", url: "https://www.google.com/maps/search/資料館+展示" }
+    ]
+  },
+  {
+    id: "worker_tired_night",
+    title: "社会人向け：旅先で一日動き回ったあとの夜プラン",
+    description: "観光や仕事でヘトヘトだけど、すぐ寝るには惜しい夜に。静かすぎずうるさすぎない場所で、頭を休める寄り道コースです。",
+    userTypes: ["若手社会人"],
+    moods: ["頭が疲れていて何も考えたくない","体は疲れているけど寝るには早い","静かすぎるのも賑やかすぎるのも嫌"],
+    links: [
+      { label: "日帰り温泉・スーパー銭湯・サウナを探す", url: "https://www.google.com/maps/search/日帰り温泉+サウナ" },
+      { label: "夜でも開いているカフェ・ラウンジを探す", url: "https://www.google.com/maps/search/カフェ+夜遅くまで営業" }
+    ]
+  },
+  {
+    id: "worker_short_gap",
+    title: "社会人向け：出張・ワーケーション中のすきま時間プラン",
+    description: "打ち合わせやチェックインまでの30分〜1時間、出張先のオフィス街や駅近でさっと気分転換したいときに。",
+    userTypes: ["若手社会人"],
+    moods: ["次の予定まで少し時間が空いた","予定がなくて焦っている","お金を使わずに気分転換したい"],
+    links: [
+      { label: "ビジネス街近くの小さな公園・広場を探す", url: "https://www.google.com/maps/search/公園+広場" },
+      { label: "無料で入れるビル共用ラウンジ・展望スペースを探す", url: "https://www.google.com/maps/search/ビル+展望+ラウンジ" }
+    ]
+  },
+  {
+    id: "solo_anywhere",
+    title: "一人旅向け：今日は誰とも話したくない日のプラン",
+    description: "一人旅の途中で、観光も会話も少し疲れてきたときに。人の気配はあるけれど干渉されにくい、旅先の“避難場所”を組み合わせています。",
+    userTypes: ["一人行動が多い人"],
+    moods: ["今日は誰にも会いたくない","一人でいたいけど家は嫌","静かすぎるのも賑やかすぎるのも嫌"],
+    links: [
+      { label: "一人で入りやすいチェーン系カフェを探す", url: "https://www.google.com/maps/search/カフェ+チェーン" },
+      { label: "大型書店・複合商業施設を探す", url: "https://www.google.com/maps/search/大型書店+ショッピングモール" }
+    ]
+  },
+  {
+    id: "solo_moyamoya",
+    title: "一人旅向け：なんとなくモヤモヤするときのプラン",
+    description: "旅の目的がよくわからなくなってきたときに。景色を眺めながら、一人で考えごとがしやすい短めルートです。",
+    userTypes: ["一人行動が多い人"],
+    moods: ["なんとなく帰りたくない","お金を使わずに気分転換したい"],
+    links: [
+      { label: "川沿い・海沿いなど散歩しやすい遊歩道を探す", url: "https://www.google.com/maps/search/遊歩道+川沿い" },
+      { label: "ベンチが多い広めの公園を探す", url: "https://www.google.com/maps/search/公園+ベンチ" }
+    ]
+  },
+  {
+    id: "newcomer_explore_local",
+    title: "長めの滞在向け：観光地じゃない“まち”を知るプラン",
+    description: "連泊やワーケーションで、定番観光スポット以外の“生活のにおいがする場所”を知りたくなったときに。",
+    userTypes: ["最近引っ越してきた人"],
+    moods: ["地元っぽい場所を知りたい","お金を使わずに気分転換したい","静かすぎるのも賑やかすぎるのも嫌"],
+    links: [
+      { label: "地元商店街を探す（Googleマップ）", url: "https://www.google.com/maps/search/商店街" },
+      { label: "公民館・文化センターなど地域施設を探す", url: "https://www.google.com/maps/search/公民館+文化センター" }
+    ]
+  },
+  {
+    id: "newcomer_short_gap",
+    title: "長めの滞在向け：手続きや予定の合間に街を知るプラン",
+    description: "役所・コワーキング・現地の人とのアポなど、用事の合間にぽっかり空いた時間で、その街を少しずつ知っていくショートコースです。",
+    userTypes: ["最近引っ越してきた人"],
+    moods: ["次の予定まで少し時間が空いた","予定がなくて焦っている","地元っぽい場所を知りたい"],
+    links: [
+      { label: "駅周辺の小さな公園・神社を探す", url: "https://www.google.com/maps/search/公園+神社" },
+      { label: "観光案内所・インフォメーションを探す", url: "https://www.google.com/maps/search/観光案内所+インフォメーション" }
+    ]
+  },
+  {
+    id: "local_rediscover",
+    title: "リピーター向け：何度も来ている街をもっと知るプラン",
+    description: "何度か訪れている旅先で、“観光客があまり行かない場所”を開拓したいときに。",
+    userTypes: ["地元に住んでいる人"],
+    moods: ["地元っぽい場所を知りたい","何か新しいことしたい","お金を使わずに気分転換したい"],
+    links: [
+      { label: "市区町村の文化財・歴史スポットを探す", url: "https://www.google.com/maps/search/郷土資料館+歴史資料館" },
+      { label: "マーケット・ローカルイベント会場を探す", url: "https://www.google.com/maps/search/イベント+マーケット" }
+    ]
+  },
+  {
+    id: "local_hideaway",
+    title: "リピーター向け：旅先の街で静かにこもりたいプラン",
+    description: "何度か来ている街で、あえて観光地から少し離れて静かに過ごしたい日に。人混みを避けやすいスポットを中心に提案します。",
+    userTypes: ["地元に住んでいる人"],
+    moods: ["今日は誰にも会いたくない","一人でいたいけど家は嫌","静かすぎるのも賑やかすぎるのも嫌"],
+    links: [
+      { label: "中心部から少し離れた大きな公園を探す", url: "https://www.google.com/maps/search/大きな公園" },
+      { label: "1〜2駅離れた静かなカフェエリアを探す", url: "https://www.google.com/maps/search/カフェ+静かなエリア" }
+    ]
+  }
+];
