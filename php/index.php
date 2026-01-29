@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Matching App</title>
+    <style>
+        body {
+        font-family: system-ui, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: #f5f5f5;
+        }
+        .container {
+        max-width: 480px;
+        margin: 60px auto;
+        background: #fff;
+        padding: 28px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        text-align: center;
+        }
+        h1 {
+        font-size: 1.6rem;
+        margin-top: 0;
+        margin-bottom: 12px;
+        }
+        p {
+        font-size: 0.9rem;
+        color: #555;
+        margin-bottom: 24px;
+        }
+        a.button {
+        display: inline-block;
+        padding: 10px 24px;
+        border-radius: 999px;
+        background: #007aff;
+        color: #fff;
+        text-decoration: none;
+        font-size: 0.95rem;
+        }
+        a.button:hover {
+        background: #005ec2;
+        }
+        .sub-link {
+        margin-top: 12px;
+        font-size: 0.85rem;
+        }
+        .sub-link a {
+        color: #007aff;
+        text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>検索だけでは見つからない旅へ</h1>
+        <p>今のあなたの気分から、ぴったりな旅の「コト」を提案します。</p>
+        <a href="login.html" class="button">ログインしてはじめる</a>
+        <div class="sub-link">
+        はじめての方は <a href="signup.html">新規登録</a>
+        </div>
+    </div>
+</body>
+</html>
